@@ -11,5 +11,5 @@ int main()
 	cout << "   " << b << endl;
 	cout << "   " << b << endl;
 	system("pause");
-	return 9*9;
+	return 0;
 }
