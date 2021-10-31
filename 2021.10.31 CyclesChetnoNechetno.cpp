@@ -7,14 +7,12 @@ int main ()
 	setlocale(LC_ALL, "russian");
 
 	int nach, kon;
-	cout << "Вывод нечетных чисел" << endl;
-	cout << "Введите первое число = ";
+	cout << "Вывод нечетных чисел от некоторого до некоторого" << endl;
+	cout << "Введите некоторое первое число = ";
 	cin >> nach;
-	cout << "Введите второе число = ";
+	cout << "Введите некоторое второе число = ";
 	cin >> kon;
-
-	cout << "Вывод нечетных чисел от " << nach << " до " << kon << endl;
-	Sleep(1000);
+	system("pause");
 	
 	for (nach; nach < kon; nach+=2) {
 			cout << nach << "\t" << endl;
