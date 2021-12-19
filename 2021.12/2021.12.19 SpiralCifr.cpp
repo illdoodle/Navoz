@@ -6,10 +6,10 @@ int main ()
 {
 	setlocale(LC_ALL, "russian");
 
-	const int size = 5;
+	const int size = 10;
 	int a[size][size] = {{0}};
 	int n = 1, cn = 0, dir = 0, j = 0, i = 0, dj = 0, di = 1;
-	while(n <= 25){
+	while(n <= size * size){
 		a[j][i] = n++;
 		j+=dj, i+=di;
 		if(i == size - cn && dir == 0){
