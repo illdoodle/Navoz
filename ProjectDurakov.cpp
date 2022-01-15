@@ -8,6 +8,6 @@ int main ()
 
 	
 
-	system("pause");
+	system("pause >> null");
 	return 0;
 }
