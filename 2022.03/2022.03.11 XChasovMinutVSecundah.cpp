@@ -9,6 +9,7 @@ int main ()
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
+	//1 блок, задача про полные минуты и часы в x секундах
 	int s;
 	cout << "Введите кол-во секунд = ";
 	cin >> s;

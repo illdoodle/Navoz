@@ -9,6 +9,7 @@ int main ()
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
+	//1 блок, задача про таблицу товара стоимостью 20.4
 	double s = 20.4;
 	for(int i = 1; i <= 10; i++){
 		cout << "Стоимость " << i << " штук = " << s * i << endl;

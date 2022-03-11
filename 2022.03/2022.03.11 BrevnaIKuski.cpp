@@ -9,6 +9,7 @@ int main ()
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
+	//1 блок, задача про бревна
 	int b, k;
 	cout << "Длина бревна = ";
 	cin >> b;

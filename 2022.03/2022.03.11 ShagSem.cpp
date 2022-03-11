@@ -9,8 +9,9 @@ int main ()
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
+	//1 блок, задача про значения с шагом 7 до 100
 	int shag = 7, size = 100;
-	for(int i = 0; i < size; i+=shag){
+	for(int i = 10; i < size; i+=shag){
 		cout << i << " ";
 	}
 

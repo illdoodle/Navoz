@@ -9,6 +9,7 @@ int main ()
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
+	//1 блок, задача про номер мес€ца и кол-во дней в нем
 	int n; 
 	cout << "¬ведите номер мес€ца = ";
 	cin >> n;
