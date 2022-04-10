@@ -18,7 +18,6 @@ int main()
 	cout << mySum() << endl;
 
 	system("pause >> null");
-	return 0;
 }
 
 int mySum(int a, int b, int c)

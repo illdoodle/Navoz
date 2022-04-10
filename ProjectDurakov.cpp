@@ -3,7 +3,7 @@
 #include <math.h>
 using namespace std;
 
-int main()
+void main()
 {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -12,5 +12,4 @@ int main()
 	
 
 	system("pause >> null");
-	return 0;
 }
