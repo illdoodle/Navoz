@@ -23,5 +23,7 @@ int main()
 
 int mySum(int a, int b, int c)
 {
+	static int count = 0;
+	cout << count++ << endl;
 	return a + b + c;
 }
