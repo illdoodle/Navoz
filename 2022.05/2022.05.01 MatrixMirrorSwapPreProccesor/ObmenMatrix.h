@@ -1,0 +1,1 @@
+void obmenMatrix(unsigned int *arr, int size);

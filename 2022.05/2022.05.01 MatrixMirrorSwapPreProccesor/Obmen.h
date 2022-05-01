@@ -1,0 +1,1 @@
+void obmen(unsigned int &a, unsigned int &b);
