@@ -18,15 +18,16 @@ struct SubjectMark
 
 class SchoolBoy:public Human
 {
-	private:
-		SubjectMark *marks;
-	public:
-		void addMark(subjectList, int);
-		void listMarks();
-		double getMarksAvg();
-		int getMarkSubject(subjectList);
-		SchoolBoy();
-		SchoolBoy(char *_name);
-		~SchoolBoy();
+private:
+	SubjectMark *marks;
+public:
+	void addMark(subjectList, int);
+	void listMarks();
+	double getMarksAvg();
+	int getMarksAvgSubject(subjectList);
+	int getMarkSubject(subjectList);
+	SchoolBoy();
+	SchoolBoy(char *_name);
+	~SchoolBoy();
 };
 

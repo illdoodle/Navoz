@@ -1,5 +1,4 @@
-#include "human.h"
-#include "schoolboy.h"
+#include "schoolclass.h"
 
 void main()
 {
@@ -13,6 +12,13 @@ void main()
 	boy.addMark(sLeng, 4);
 	boy.addMark(sLrus, 5);
 	boy.listMarks();
+	cout << endl;
+	cout << boy.getMarksAvg() << endl;
+	cout << boy.getMarksAvgSubject(sLrus) << endl;
+	SchoolClass firclass;
+	firclass.add(&boy);
+	firclass.SBoys[0]->getMarksAvg();
+	firclass.SBoys[0]->name;
 
 	system("pause >> null");
 }

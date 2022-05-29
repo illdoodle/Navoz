@@ -22,8 +22,8 @@ SchoolBoy::~SchoolBoy()
 	}
 }
 
-void SchoolBoy::addMark(subjectList subject, int mark){
-
+void SchoolBoy::addMark(subjectList subject, int mark)
+{
 	SubjectMark subjectMark;
 	subjectMark.subject = subject;
 	subjectMark.mark = mark;
@@ -46,4 +46,27 @@ void SchoolBoy::listMarks()
 	for(int i = 0; i < count; i++){
 		cout << marks[i].mark << " ";
 	}
+}
+
+double SchoolBoy::getMarksAvg()
+{	
+	unsigned int countSM = _msize(marks) / sizeof(SubjectMark), sum = 0;
+	for(unsigned int i = 0; i < countSM; i++){
+		sum+=marks[i].mark;
+	}
+	return (double)sum / countSM;
+}
+
+int SchoolBoy::getMarksAvgSubject(subjectList sub)
+{
+	unsigned int countSM = _msize(marks) / sizeof(SubjectMark);
+	int countBySub = 0;
+	int sum = 0;
+	for(unsigned int i = 0; i < countSM; i++){
+		if(marks[i].subject == sub){
+			sum+=marks[i].mark;
+			countBySub++;
+		}
+	}
+	return sum / countBySub;
 }
