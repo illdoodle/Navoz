@@ -3,9 +3,10 @@
 #include <math.h>
 using namespace std;
 
-int main ()
+int main()
 {
-	setlocale(LC_ALL, "russian");
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
