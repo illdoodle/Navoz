@@ -1,0 +1,1 @@
+void printMatrix(unsigned int *arr, int w, int h);

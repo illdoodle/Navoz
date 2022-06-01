@@ -3,14 +3,17 @@
 #include <math.h>
 using namespace std;
 
-void main()
+int main ()
 {
-	SetConsoleOutputCP(CP_UTF8);
-	SetConsoleCP(CP_UTF8);
+	setlocale(LC_ALL, "russian");
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
-	
+	int a[3] = {1, 2, 3};
+	for(int i = 0; i < 3; i++){
+		a[i] = &a[i];
+		cout << a[i] << " ";
+	}
 
 	system("pause >> null");
 	return 0;
