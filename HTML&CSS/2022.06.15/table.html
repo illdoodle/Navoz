@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+</head>
+<body>
+    <h3><i><b>В таблице могут использоваться следующие способы выравнивания:</b></i></h3> <br>
+    <table border="4" width="90%" height="600" cellpadding="10">
+        <tbody>
+            <tr>
+                <td height="200" width="30%" align="left" valign="top">
+                    <b>По горизонтали:</b> - слева; <br> 
+                    <b>По вертикали:</b> - вверху. 
+                </td>
+                <td width="30%" align="left" valign="center">
+                    <b>По горизонтали:</b> - слева; <br>
+                    <b>По вертикали:</b> - по центру. 
+                </td>
+                <td width="30%" align="left" valign="bottom">
+                    <b>По горизонтали:</b> - слева; <br>
+                    <b>По вертикали:</b> - внизу. 
+                </td>
+            </tr>
+            <tr>
+                <td height="200" align="center" valign="top">
+                    <b>По горизонтали:</b> - по центру; <br>
+                    <b>По вертикали:</b> - вверху. 
+                </td>
+                <td align="center" valign="center">
+                    <b>По горизонтали:</b> - по центру; <br>
+                    <b>По вертикали:</b> - по центру. 
+                </td>
+                <td align="center" valign="bottom">
+                    <b>По горизонтали:</b> - по центру; <br>
+                    <b>По вертикали:</b> - внизу. 
+                </td>
+            </tr>
+            <tr>
+                <td height="200" align="right" valign="top">
+                    <b>По горизонтали:</b> - справа; <br>
+                    <b>По вертикали:</b> - вверху. 
+                </td>
+                <td align="right" valign="center">
+                    <b>По горизонтали:</b> - справа; <br>
+                    <b>По вертикали:</b> - по центру. 
+                </td>
+                <td align="right" valign="bottom">
+                    <b>По горизонтали:</b> - справа; <br>
+                    <b>По вертикали:</b> - внизу. 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <h2><i><b>Ляпота</b></i></h2>
+    </p>
+    <table border="3" cellpadding="5" width="100%" height="750">
+        <tbody>
+            <tr>
+                <td colspan="2" rowspan="3"></td>
+                <td colspan="2"></td>
+                <td height="135"></td>
+            </tr>
+            <tr>
+                <td height="135" colspan="3"></td>
+            </tr>
+            <tr>
+                <td width="20%" rowspan="3"></td>
+                <td width="20%"></td>
+                <td height="135" width="20%"></td>
+            </tr>
+            <tr>
+                <td height="135" width="20%"></td>
+                <td width="20%" rowspan="2"></td>
+                <td colspan="2" rowspan="2"></td>
+            </tr>
+            <tr>
+                <td height="135"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <h2><b><i>Раскраски</i></b></h2>
+    </p>
+    <table border="3" cellpadding="5" width="100%" height="500" bgcolor="#E2E2E2">
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td bgcolor="#FFCACA">3</td>
+            </tr>
+            <tr bgcolor="#FFFFCA">
+                <td>4</td>
+                <td bgcolor="#ECFFEC">5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>  
+        </tbody>
+    </table>
+    <p>
+        <h2><b><i>Таблица Внутри Таблицы</i></b></h2>
+    </p>
+    <table border="3" cellpading="5" width="100%" height="700">
+        <tbody>
+            <tr>
+                <th height="50" colspan="2">Заголовок</th>
+            </tr>
+            <tr>
+                <td width="15%" height="300" valign="top"><b>Содержание:</b></td>
+                <td>
+                    <table cellpading="5" cellspacing="0" width="30%" height="200" align="center">
+                        <tbody>
+                            <tr bgcolor="00AAFF">
+                                <td>1</td>
+                                <td bgcolor="00FFAA">2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr bgcolor="00FFAA">
+                                <td>4</td>
+                                <td bgcolor="FF00AA">5</td>
+                                <td>6</td>
+                            </tr>
+                            <tr bgcolor="00AAFF">
+                                <td>7</td>
+                                <td bgcolor="00FFAA">8</td>
+                                <td>9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
