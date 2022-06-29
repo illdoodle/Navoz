@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <style>
+        #mHorizontal{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            background-color: lightyellow;
+        }
+        #mHorizontal li{
+            float: left;
+        }
+        #mHorizontal li:last-child{
+            clear: both;
+            float: none;
+        }
+        #mHorizontal a{
+            padding: 20px 50px;
+            display: block;
+            color: lightgreen;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-right: 1px solid yellow;
+            text-shadow: 1px 1px 1px black;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        #mHorizontal .active,
+        #mHorizontal li:hover{
+            background: lightcoral;
+        }
+        
+        #mHorizonta2{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            background-color: lightyellow;
+        }
+        #mHorizonta2 > li{
+            float: left;
+        }
+        #mHorizonta2 li:last-child{
+            clear: both;
+            float: none;
+        }
+        #mHorizonta2 a{
+            padding: 20px 50px;
+            display: block;
+            color: lightgreen;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-right: 1px solid yellow;
+            text-shadow: 1px 1px 1px black;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        #mHorizonta2 .active,
+        #mHorizonta2 li:hover{
+            background: lightcoral;
+        }        
+        #mHorizonta2 ul{
+            position: absolute;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: none;
+        }
+        #mHorizonta2 li:hover ul{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul type="" id="mHorizontal">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Описание</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a href="#" class="active">FAQ</a></li>
+        <li><a href="#">О Нас</a></li>
+        <li></li>
+    </ul>
+    <ul type="" id="mVertical">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Описание</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">О Нас</a></li>
+    </ul>
+    <ul type="" id="mHorizonta2">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Описание</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li>
+            <a href="#">О Нас</a>
+            <ul type="" id="">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Описание</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">О Нас</a></li>
+            </ul>
+        </li>
+        <li></li>
+    </ul>
+    <ul type="" id="">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Описание</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">О Нас</a></li>
+    </ul>
+</body>
+</html>

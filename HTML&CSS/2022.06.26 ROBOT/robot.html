@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Робот</title>
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <style>
+        body{
+            background: linear-gradient(grey, transparent 1px), linear-gradient(90deg, grey, transparent 1px);
+            background-size: 50px 50px;
+            margin: 0px;
+        }
+        div{
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .robot{
+            border: 0px;
+        }
+        .robot .head{
+            width: 550px;
+            height: 400px;
+            background: #DDD;
+            position: relative;
+            left: 200px;
+            top: 300px;
+        }
+        .robot .eye{
+            width: 100px;
+            height: 100px;
+            background: white;
+            position: absolute;
+            left: 100px;
+            top: 50px;
+            overflow: hidden;
+        }
+        .robot .eye div{
+            width: 50px;
+            height: 50px;
+            background: rgb(99, 177, 255);
+            position: relative;
+            left: 50px;
+            top: 50px;
+            overflow: hidden;
+        }
+        .robot .eye+.eye{
+            left: 350px;
+        }
+        .robot .head:hover .eye div{
+            left: 25px;
+            top: 25px;
+        }
+        .robot .nose{
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            left: 250px;
+            top: 150px;
+        }
+        .robot .mouth{
+            width: 250px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+            left: 150px;
+            top: 250px;
+            overflow: hidden;
+        }
+        .robot .ear{
+            width: 50px;
+            height: 100px;
+            background: grey;
+            position: absolute;
+            left: 550px;
+            top: 100px;
+            margin: -1px;
+        }
+        .robot .ear+.ear{
+            width: 50px;
+            height: 100px;
+            background: grey;
+            position: absolute;
+            left: -50px;
+            top: 100px;
+            margin: -1px;
+        }
+        .robot .ear div{
+            width: 50px;
+            height: 200px;
+            background: lightgrey;
+            position: relative;
+            left: 50px;
+            top: -50px;
+            margin: -1px;
+        }
+        .robot .ear+.ear div{
+            width: 50px;
+            height: 200px;
+            background: lightgrey;
+            position: relative;
+            left: -50px;
+            top: -50px;
+        }
+        .robot .wifi{
+            width: 50px;
+            height: 200px;
+            background: grey;
+            position: absolute;
+            left: 250px;
+            top: -199px;
+            margin: -1px;
+        }
+        .robot .wifi>div{
+            width: 150px;
+            height: 150px;
+            background: lightgrey;
+            position: relative;
+            left: -50px;
+            top: -51px;
+            margin: -1px;
+        }
+        .robot .wifi>div div{
+            width: 50px;
+            height: 50px;
+            background: yellow;
+            position: relative;
+            left: 50px;
+            top: 50px;
+            margin: -1px;
+        }
+        .robot .mouth div div{
+            width: 70px;
+            height: 51px;
+            float: left;
+            margin: -1px;
+            background: white;
+        }
+        .robot .mouth>div{
+            margin: -1px -15px;
+            height: 100px;
+            width: 275px;
+        }
+    </style>
+</head>
+<body>
+    <div class="robot">
+        <div class="head">
+            <div class="eye">
+                <div></div>
+            </div>
+            <div class="eye">
+                <div></div>
+            </div>
+            <div class="nose"></div>
+            <div class="mouth">
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="ear">
+                <div></div>
+            </div>
+            <div class="ear">
+                <div></div>
+            </div>
+            <div class="wifi">
+                <div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
