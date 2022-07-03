@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.main{
+    width: 60%;
+    height: 100vh;
+    background: #111 url(adaptiv/anderssonwise-fon.jpg) center center no-repeat;
+    background-size: cover;
+    float: left;
+    color: DDD;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+}
+.side1, .side2{
+    width: 40%;
+    height: 50vh;
+    margin-left: 60%;
+    border-left: 5px solid #FFF;
+}
+.side1{
+    background-color: #130;
+    border-bottom: 5px solid #FFF;
+    color: #DDD;
+    padding: 200px 50px;
+}
+.side2{
+    background-color: #222;
+    color: #DDD;
+    padding: 200px 50px;
+}
+.menu{
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 75px;
+    padding: 25px;
+    color: #555;
+    text-transform: uppercase;
+    width: 250px;
+}
+.menu ul,h4{
+    list-style: none;
+    margin: 10px 10px;
+}
+.bottomname{
+    position: absolute;
+    left: 75px;
+    bottom: 75px;
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px black;
+}
+div{
+    box-sizing: border-box;
+}
+@media all and (max-width:1023px){
+    .main{
+        float: none;
+        width: auto;
+        height: 60vh;
+    }
+    .side1,.side2{
+        margin: 0px;
+        float: left;
+        width: 50%;
+        border: none;
+        border-top: 5px solid #FFF;
+    }
+    .side1{
+        border-right: 5px solid #FFF;
+    }
+    .side2{
+
+    }
+}
+@media all and (max-width:640px){
+    .main{
+        float: none;
+        width: auto;
+        height: 60vh;
+    }
+    .side1,.side2{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        background-color: #FFF;
+    }
+}
