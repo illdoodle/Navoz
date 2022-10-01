@@ -25,7 +25,6 @@
             Я не балбес <input type="radio" name="balbes">
         </p>
     </form>
-
     <h1>
         <b>Задание 1</b>
     </h1>
@@ -88,7 +87,6 @@
                         <input type="checkbox" name="foodorder">
                     </td>
                 </tr>
-                
                 <tr>
                     <td align="left">Чупа-чупс</td>
                     <td align="right">
@@ -105,8 +103,8 @@
                     <td colspan="2"><hr></td>
                 </tr>
             </tbody>
-        </table> <br>
-        <table>
+        </table> 
+        <table width="20%">
             <tbody>
                 <p><b>Куда доставить заказ?</b></p>
                 <tr>
@@ -129,13 +127,76 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td align="left">Улица:</td>
-                    <td align="right"></td>
+                    <td align="left">Город:</td>
+                    <td align="right">
+                        <select name="city">
+                            <option value="city1">Город 1</option>
+                            <option value="city2">Город 2</option>
+                            <option value="city3">Город 3</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
-                    <td align="left">Город:</td>
-                    <td align="right"></td>
+                    <td align="left">Улица:</td>
+                    <td align="right">
+                        <select name="street">
+                            <option value="street1">Улица 1</option>
+                            <option value="street2">Улица 2</option>
+                            <option value="street3">Улица 3</option>
+                        </select>
+                    </td>
                 </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="sendbutton" value="Отправить">
+                        <input type="submit" name="undobutton" value="Сброс">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><hr></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <p><b>Как будете расплачиваться?</b></p>
+                <table border="1px" width="200px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" name="money">
+                                Наличными
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="money">
+                                Чеком
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="money">
+                                Дебетовой Карточкой
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <b>Кредитной карточкой</b> <br>
+                                <input type="radio">
+                                MasterCard <br>
+                                <input type="radio">
+                                Visa <br>
+                                <input type="radio">
+                                Discovery <br>
+                                <input type="radio">
+                                American Express
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> <br>
+                <input type="submit" name="sendbutton" value="Отправить">
+                <input type="submit" name="undobutton" value="Сброс">
             </tbody>
         </table>
     </form>
