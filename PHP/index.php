@@ -53,16 +53,15 @@ echo '<h3>Выведите по буквам в столбик название 
 $name = 'abcdЗря';
 var_dump($name);
 echo '<br/>';
-/*
 echo 'size = ', mb_strlen($name), '<br/>';
 for($i = 0; $i < strlen($name); $i++){
-    echo $name[$i], ' ';
+    echo mb_substr($name, $i, 1), ' ';
 }
 echo '<br/>';
-for($i = 0; $i < mb_strlen($name); $i++){
-    echo $name[$i], '<br/>';
+for($i = 1; $i < mb_strlen($name); $i++){
+    echo mb_substr($name, $i, 1), '<br/>';
 }
-*/
+
 
 echo '<h3>Сколько полных минут и часов содержится в x секундах?</h3>';
 $n = 3559; //Секунды
@@ -120,7 +119,7 @@ for($i = 3; $i < count($arr); $i++){
         }
     }
 }
-//Не придумал как обнулить элемент между крайними элементами, разве что создать новый массив который будет хранить повторяющиеся числа и уже потом их обнулять с помощью него.
+//Не обнуляет промежуточные числа, понял как делать слишком поздно.
 for($i = 0; $i < count($arr); $i++){
     echo $arr[$i], ' ';
 }
@@ -148,5 +147,61 @@ if($count == count($arr)){
     echo 'Числа массива НЕ идут в возрастающей последосвательности.';
 }
 error_reporting(1);
+
+echo '<h3>Дано слово s1. Образовать слово s2 из нечетных букв s1.</h3>';
+$s1 = 'abcаюnk';
+$s2 = '';
+for($i = 0; $i < mb_strlen($s1); $i+=2){
+    $s2.=mb_substr($s1, $i, 1);
+}
+echo $s2;
+
+echo '<h3>Дано текст, вывести все цифры и найти их сумму.</h3>';
+$s = 'ab3аю72nk5555 <br/>';
+$sum = 0;
+echo 'Слово: ', $s;
+echo 'Все цифры: ';
+for($i = 0; $i < mb_strlen($s); $i++){
+    $le = mb_substr($s, $i, 1);
+    $sum+=(int)$le;
+    if(is_numeric($le)){
+        echo $le, ' ';
+    }
+}
+echo '<br/> Сумма = ', $sum;
+
+echo '<h3>Напечатать минимальное число больше 200 и кратное 17.</h3>';
+$num = 200;
+while($num % 17){
+    $num++;
+}
+echo $num;
+
+echo '<h3>Найти все трехзначные простые числа.</h3>';
+$count = 0;
+for($i = 100; $i < 1000; $i++){
+    $isSimple = true;
+    for($d = 2; $d < $i / 2; $d++){
+        $count++;
+        if($i % $d == 0){
+            $isSimple = false;
+            break;
+        }
+    }
+    if($isSimple){
+        echo $i, ' ';
+    }
+}
+echo '<br/> Счетчик = ', $count; 
+
+echo '<h3>Вывести на экран квадрат состоящий из n * n квадратов различного цвета.</h3>';
+$w = 100; 
+$n = 10;
+$wMini = $w / $n;
+echo '<div style="width:'.$w.'px;">';
+for($i = 0; $i - $n * $n; $i++){
+    echo '<div style="background:rgb('.rand(0,255).','.rand(0,255).','.rand(0,255).'); width:'.$wMini.'px; height:'.$wMini.'px; display: inline-block;"></div>';
+}
+echo '</div>';
 ?>
 <a name="end"></a>
