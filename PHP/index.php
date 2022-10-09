@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="favicon.ico">
+
 <?php
 echo '<h3>Арифеметические Операции:</h3>';
 $a = 7;
