@@ -53,16 +53,15 @@ echo '<h3>Выведите по буквам в столбик название 
 $name = 'abcdЗря';
 var_dump($name);
 echo '<br/>';
-/*
 echo 'size = ', mb_strlen($name), '<br/>';
 for($i = 0; $i < strlen($name); $i++){
-    echo $name[$i], ' ';
+    echo mb_substr($name, $i, 1), ' ';
 }
 echo '<br/>';
-for($i = 0; $i < mb_strlen($name); $i++){
-    echo $name[$i], '<br/>';
+for($i = 1; $i < mb_strlen($name); $i++){
+    echo mb_substr($name, $i, 1), '<br/>';
 }
-*/
+
 
 echo '<h3>Сколько полных минут и часов содержится в x секундах?</h3>';
 $n = 3559; //Секунды
@@ -85,7 +84,7 @@ echo 'Длина отпиливаемого куска = ', $x, '<br/>';
 echo 'Максимум отпиливаемых целых кусков = ', (int)($l / $x);
 
 echo '<h3>В массиве из 10 элементов определить количество элементов, значения которых больше среднего арифметического всех элементов. 
-        Значения элементов массива - случайные числа от 5 до 10.</h3>';
+        Значения элементов массива - случайные числа от 5 до 10:</h3>';
 $arr = [6, 5, 6, 8, 7, 9, 10, 7, 5, 9];
 $sum = 0; 
 for($i = 0; $i < count($arr); $i++){   
@@ -101,7 +100,7 @@ for($i = 0; $i < count($arr); $i++){
     }
 }
 
-echo '<h3>Обнулить в массиве все числа, которые повторяются более двух раз. Первые два элемента оставлять.</h3>';
+echo '<h3>Обнулить в массиве все числа, которые повторяются более двух раз. Первые два элемента оставлять:</h3>';
 $arr = [4, 4, 4, 7, 6, 1, 1, 77, 13, 13, 23, 1, 123, 8853, 19230];
 echo 'До и после обнуления: <br/>';
 for($i = 0; $i < count($arr); $i++){
@@ -120,13 +119,13 @@ for($i = 3; $i < count($arr); $i++){
         }
     }
 }
-//Не придумал как обнулить элемент между крайними элементами, разве что создать новый массив который будет хранить повторяющиеся числа и уже потом их обнулять с помощью него.
+//Не обнуляет промежуточные числа, понял как делать слишком поздно.
 for($i = 0; $i < count($arr); $i++){
     echo $arr[$i], ' ';
 }
 
 echo '<h3>Создайте массив из 4 случайных целых чисел из отрезка [10;99], выведите его на экран в строку. 
-Определить и вывести на экран сообщение о том, является ли массив строго возрастающей последовательностью.</h3>';
+Определить и вывести на экран сообщение о том, является ли массив строго возрастающей последовательностью:</h3>';
 error_reporting(0);
 //$arr[5]; 
 $arr = [88, 66, 77, 100];
@@ -147,6 +146,177 @@ if($count == count($arr)){
 }else{
     echo 'Числа массива НЕ идут в возрастающей последосвательности.';
 }
-error_reporting(1);
+error_reporting(E_ALL);
+
+echo '<h3>Дано слово s1. Образовать слово s2 из нечетных букв s1:</h3>';
+$s1 = 'abcаюnk';
+$s2 = '';
+for($i = 0; $i < mb_strlen($s1); $i+=2){
+    $s2.=mb_substr($s1, $i, 1);
+}
+echo $s2;
+
+echo '<h3>Дан текст, вывести все цифры и найти их сумму:</h3>';
+$s = 'ab3аю72nk5555 <br/>';
+$sum = 0;
+echo 'Слово: ', $s;
+echo 'Все цифры: ';
+for($i = 0; $i < mb_strlen($s); $i++){
+    $le = mb_substr($s, $i, 1);
+    $sum+=(int)$le;
+    if(is_numeric($le)){
+        echo $le, ' ';
+    }
+}
+echo '<br/> Сумма = ', $sum;
+
+echo '<h3>Напечатать минимальное число больше 200 и кратное 17:</h3>';
+$num = 200;
+while($num % 17){
+    $num++;
+}
+echo $num;
+
+echo '<h3>Найти все трехзначные простые числа:</h3>';
+$count = 0;
+for($i = 100; $i < 1000; $i++){
+    $isSimple = true;
+    for($d = 2; $d < $i / 2; $d++){
+        $count++;
+        if($i % $d == 0){
+            $isSimple = false;
+            break;
+        }
+    }
+    if($isSimple){
+        echo $i, ' ';
+    }
+}
+echo '<br/> Счетчик = ', $count; 
+
+echo '<h3>Вывести на экран квадрат состоящий из n * n квадратов различного цвета:</h3>';
+$w = 100; 
+$n = 10;
+$wMini = $w / $n;
+echo '<div style="width:'.$w.'px;">';
+for($i = 0; $i - $n * $n; $i++){
+    echo '<div style="background:rgb('.rand(0,255).','.rand(0,255).','.rand(0,255).'); width:'.$wMini.'px; height:'.$wMini.'px; display: inline-block;"></div>';
+}
+echo '</div>';
+
+echo '<h3>Функции:</h3>';
+$c = 1000;
+$d = 100;
+function s($a, $b){
+    global $c;
+    return $a + $b + $c + $GLOBALS['d'];
+}
+echo 'funcRes = ', s(7, 13);
+
+echo '<h3>Максимум из двух чисел:</h3>';
+//Betweeen Two Numbers
+function maxBTN($a, $b){
+    if($a > $b){
+        return $a;
+    }else{
+        return $b;
+    }
+}
+echo 'max (7, 13) = ', maxBTN(7, 13), '<br/>';
+echo 'max (36, 73, 69, 91, 9, 1) = ', maxBTN(maxBTN(maxBTN(maxBTN(maxBTN(36, 73), 69), 91), 9), 1);
+
+echo '<h3>Функция максимума для большего числа аргументов</h3>';
+function maxBTSix($a, $b, $c = 7){
+    /*
+    echo '1 = ', $a, '<br/>';
+    echo '2 = ', $b, '<br/>';
+    echo '3 = ', $c, '<br/>';
+    echo 'func_num_args() = ', func_num_args(), '<br/>';
+    */
+    $max = $a;
+    for($i = 0; $i < func_num_args(); $i++){
+        //echo $i, '-e =  ', func_get_arg($i), '<br/>';
+        $tmp = func_get_arg($i);
+        if($max < $tmp){
+            $max =  $tmp;
+        }
+    }
+    //print_r(func_get_args()); 
+    return $max;
+    echo '<br/>';
+}
+echo 'max (36, 73, 69, 91, 9, 1) = ', maxBTSix(36, 73, 69, 91, 9, 1), '<br/>';
+echo 'max (1, 2) = ',  maxBTSix(1, 2);
+
+echo '<h3>Ccылки:</h3>';
+$var = 59;
+$abc = &$var;
+echo '$abc = &$var = ', $abc, '<br/>'; 
+$abc = 712;
+echo '$var if $abc (= 712) = ', $var, '<br/>'; 
+function &some(&$a){
+    $a = 791;
+    return $a;
+}
+$b = 19;
+$c = &some($b);
+echo '$b = ', $b, '<br/>';
+echo '$c = ', $c, '<br/>';
+$c = 315;
+echo '$b = ', $b, '<br/>';
+echo '$c = ', $c, '<br/>';
+
+echo '<br/> manyTimes(): <br/>';
+function manyTimes(){
+    static $count = 0;
+    echo $count++;
+}
+for($i = 0; $i < 10; $i++){
+    echo manyTimes(), ' ';
+}
+echo '<br>';
+
+echo '<br/> f932(): <br/>';
+$b = true;
+if($b){
+    function f932(){
+        return 2;
+    }
+}else{
+    function f932(){
+        return 43;
+    }
+}
+echo f932(), '<br/>';
+
+echo '<h3>Нарисовать столбчатую диаграмму с неограниченным кол-вом аргументов:</h3>';
+?>
+<style>
+    #chart{
+        position: relative;
+        width: 400px;
+        height: 300px;
+        border: 2px solid black;
+    }
+    #chart div{
+        position: absolute;
+        border: 1px solid black;
+    }
+    #chart p{
+        text-align: center;
+        margin-top: -25px;
+    }
+</style>
+<?php
+function printChart(){
+    echo '<div id="chart">';
+    $a = func_get_args();
+    $width = 100 / count($a);
+    foreach($a as $num => $val){
+        echo '<div style="width:',$width,'%; height: ',$val/2.50,'%; bottom: 0px; left:',$num * $width,'%;"><p>',$val,'</p></div>';
+    }
+    echo '</div>';
+}
+printChart(200, 100, 80, 220, 30);
 ?>
 <a name="end"></a>
