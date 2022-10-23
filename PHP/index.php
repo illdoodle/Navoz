@@ -318,5 +318,87 @@ function printChart(){
     echo '</div>';
 }
 printChart(200, 100, 80, 220, 30);
+
+echo '<h3>Сократите имя до инициалов:</h3>';
+function FIO($str){
+    $space1 = mb_strpos($str, ' ');
+    $space2 = mb_strrpos($str, ' ');
+    return mb_substr($str, 0, $space1 + 2).'.'.mb_substr($str, $space2, 2).'.';
+}
+function FIO_WTF($str){
+    return preg_replace('/^(\S+\s\S)\S+(\s\S).*/iu', '$1.$2.', $str);
+}
+$name = 'Иванов Сергей Петрович';
+echo 'Имя = ', $name, '<br/>';
+echo 'Сокращённое имя = ', FIO($name), '<br/>';
+echo 'Сокращённое имя по-другому = ', FIO_WTF($name);
+
+echo '<h3>Сериализация данных:</h3>';
+$a = [7, 8, 'abc' => [34] ];
+echo '<pre>';
+print_r($a);
+echo '</pre>';
+//$str = serialize($a);
+$str = json_encode($a);
+echo 'str = ', $str, '<br>';
+//$b = unserialize($str);
+$b = json_decode($str);
+echo 'b = <br>';
+echo '<pre>';
+print_r($b);
+echo '</pre>';
+$a = [7, 8, [34] ];
+$str = json_encode($a);
+echo 'str = ', $str, '<br>';
+
+echo '<h3>Хэширование:</h3>';
+$pass1 = '123';
+$pass2 = '834abc.!%#${@GGGGGFSDFDSFSDF}+♣♣§';
+$hash1 = md5($pass1);
+$hash2 = md5($pass2);
+echo <<<EOT
+<pre>
+    $hash1 $pass1 
+    $hash2 $pass2 
+</pre>
+EOT;
+
+echo '<h3>Сколько фотографий у пользователя?</h3>';
+/*
+function photoCount($count){
+    $res = 'У пользователя ';
+    if($count == 0){
+        $res.='нет';
+    }else{
+        $res.=$count;
+    }
+    $res.=' фотографи';
+    if($count % 100 > 4 && $count % 100 < 21){
+        $res.='й';
+    }else{
+        switch($count % 10){
+            case 1:
+                $res.='я';
+                break;
+            case 2: 
+            case 3: 
+            case 4:
+                $res.='и';
+                break;
+                default:
+                    $res.='й';
+        }
+    }
+    $res.='!';
+    return $res;
+}
+echo photoCount(), '<br/>';
+*/
+function commonCount($count, $params){
+
+}
+function photoCount($count){
+    return commonCount($count, [['en' => ['photo', 'photos']], ['ru' => ['фотография', 'фотографии', 'фотографий']]]);
+}
 ?>
 <a name="end"></a>
