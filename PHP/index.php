@@ -400,5 +400,50 @@ function commonCount($count, $params){
 function photoCount($count){
     return commonCount($count, [['en' => ['photo', 'photos']], ['ru' => ['фотография', 'фотографии', 'фотографий']]]);
 }
+
+echo '<h3>Игры с массивом:</h3>';
+$arr = [3, 5, 7, 4];
+//echo 'array_sum($arr) = ', array_sum($arr), '<br/>';
+//Низкоуровневое решение:
+/*
+for($i = 0; $i < ; $i = 0){
+    $sum+=$arr[i];
+}
+echo 'sum = ', $sum;
+*/
+print_r($arr);
+echo '<br/>';
+echo 'sum = ', array_reduce($arr, 
+function($oldRes, $val){
+    return $oldRes + $val;
+}, 0);
+echo '<br/>';
+echo 'max = ', array_reduce($arr, 
+function($max, $val){
+    if($val > $max){
+        $max = $val;
+    }
+    return $max;
+}, 0);
+
+echo '<h3>Дан текст, найти в нем цифры и их сумму:</h3>';
+$s = 'abc3de5g4m';
+print_r(str_split($s));
+echo '<br/>';
+$digits = array_filter(
+    str_split($s), function($val){
+        return is_numeric($val);
+    });
+echo 'array_sum($digits) = ', array_sum($digits), '<br/>';
+echo 'implode($digits) = ', implode(', ', $digits);
+
+echo '<h3>Время:</h3>';
+echo 'time() = ', time(), '<br/>';
+echo '<pre>';
+print_r(getdate(time() + 24 * 3600));
+echo '</pre>';
+echo 'dateBD() = ', date('Y-m-d-H:i:s', mktime(9, 0, 0, 3, 21, 2008)), '<br/>';
+echo 'date() = ', date('Y-m-d-H:i:s', time() - mktime(9, 0, 0, 3, 21, 2008)), '<br/>';
+;
 ?>
 <a name="end"></a>
