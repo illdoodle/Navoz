@@ -1,6 +1,6 @@
 <?php 
 session_start();
-print_r($_SESSION);
+//print_r($_SESSION);
 if(isset($_POST['captcha'])){
     if($_SESSION['captcha'] == $_POST['captcha']){
         unset($_SESSION['captcha']);
@@ -17,9 +17,16 @@ if(isset($_POST['captcha'])){
         unset($_SESSION['captcha']);
     }
 }
+if(!isset($_GET['status'])){
+unset($_SESSION['status']);
 ?>
 <img src="captcha.php" alt="">
 <form action="" method="post">
     <input type="text" name= "captcha">
     <input type="submit" value="Капчировать">
 </form>
+<?php
+}else{
+    echo  '<a href="?unset=1">Ввести капчу</a>';
+}
+?>
